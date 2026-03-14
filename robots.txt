@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap — permet à Google de découvrir toutes les pages
+Sitemap: https://abonnement-stream-iptv.fr/sitemap.xml
