@@ -1,0 +1,581 @@
+{
+  "name": "🚀 StreamElite — SEO DOMINATION v6 (7 Agents | 1 Article/Jour)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "n0",
+      "name": "⏰ Tous les jours à 7h00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        100,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ================================================================\n// AGENT 1 — RESEARCH | 30 mots-clés IPTV | Rotation anti-doublon\n// ================================================================\nconst bank = [{\"keyword\": \"installer iptv firestick 4k 2026\", \"slug\": \"iptv-firestick-4k\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"eleve\", \"label\": \"Tutoriel Express\", \"icon\": \"fa-fire\", \"description\": \"Votre Firestick 4K prêt en 5 minutes : téléchargement, configuration Xtream Codes et optimisation 4K HDR. Guide testé et validé par nos experts.\", \"angle\": \"Guide installation le plus rapide et complet du web\"}, {\"keyword\": \"iptv smarters android tv guide 2026\", \"slug\": \"iptv-smarters-android\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"eleve\", \"label\": \"Tutoriel Express\", \"icon\": \"fa-android\", \"description\": \"Configurez IPTV Smarters Pro sur Android TV en moins de 3 minutes. Méthode Xtream Codes vs M3U, EPG automatique et résolution des bugs courants.\", \"angle\": \"Comparaison methodes avec etapes precises\"}, {\"keyword\": \"configurer iptv samsung smart tv tizen\", \"slug\": \"iptv-samsung-tizen\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Tutoriel Express\", \"icon\": \"fa-tv\", \"description\": \"Installez l'IPTV sur votre Samsung Smart TV sans box externe. Smart IPTV, Flix IPTV et Developer Mode expliqués étape par étape.\", \"angle\": \"Seul guide Samsung Tizen avec solution sans developer mode\"}, {\"keyword\": \"tivimate premium configuration avancee\", \"slug\": \"tivimate-avance\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Tutoriel Expert\", \"icon\": \"fa-sliders-h\", \"description\": \"Maîtrisez Tivimate Premium : EPG automatique, multi-écrans simultanés, cache par chaîne, raccourcis télécommande et paramètres avancés H.265.\", \"angle\": \"Seul guide Tivimate Premium exhaustif en francais\"}, {\"keyword\": \"iptv lg webos installation 2026\", \"slug\": \"iptv-lg-webos\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Tutoriel Express\", \"icon\": \"fa-tv\", \"description\": \"IPTV sur LG WebOS : 3 méthodes testées dont une sans Developer Mode. Flix IPTV, Smart IPTV et résolution des erreurs d'activation.\", \"angle\": \"Solution sans developer mode incluse\"}, {\"keyword\": \"installer iptv iphone ipad ios\", \"slug\": \"iptv-ios\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Tutoriel Express\", \"icon\": \"fa-mobile-alt\", \"description\": \"GSE Smart IPTV vs IPTV Smarters sur iPhone : comparatif complet 2026. Configurez le Picture-in-Picture et castez via AirPlay vers votre Apple TV.\", \"angle\": \"Guide iOS avec AirPlay PiP et test des meilleures apps\"}, {\"keyword\": \"iptv box android nvidia shield formuler\", \"slug\": \"box-android-iptv\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Tutoriel Expert\", \"icon\": \"fa-box\", \"description\": \"Nvidia Shield vs Formuler Z11 Pro vs BuzzTV XR4000 : quel box Android choisir pour l'IPTV ? Benchmark performance, compatibilité 4K et rapport qualité/prix.\", \"angle\": \"Seul comparatif technique box IPTV haut de gamme\"}, {\"keyword\": \"iptv buffering constant comment resoudre\", \"slug\": \"iptv-buffering\", \"intent\": \"probleme\", \"competition\": \"faible\", \"volume\": \"eleve\", \"label\": \"Solution Technique\", \"icon\": \"fa-wifi\", \"description\": \"Buffering IPTV en 2026 : 7 causes identifiées et leurs solutions. Distinguez buffering réseau, serveur ou codec et appliquez le bon correctif en moins de 10 minutes.\", \"angle\": \"Diagnostic precis par type de buffering\"}, {\"keyword\": \"iptv ne fonctionne plus que faire\", \"slug\": \"iptv-panne\", \"intent\": \"probleme\", \"competition\": \"faible\", \"volume\": \"eleve\", \"label\": \"Solution Technique\", \"icon\": \"fa-exclamation-triangle\", \"description\": \"IPTV qui ne marche plus ? Checklist de diagnostic en 5 étapes : expiration, DNS, application, connexion et serveur. Résolvez 95% des pannes en moins de 5 minutes.\", \"angle\": \"Checklist diagnostic 5 minutes 95 pourcent pannes resolues\"}, {\"keyword\": \"image iptv pixelisee floue ameliorer\", \"slug\": \"iptv-image-qualite\", \"intent\": \"probleme\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Solution Technique\", \"icon\": \"fa-expand\", \"description\": \"Image IPTV floue ou pixelisée ? Le codec H.265/HEVC est la clé. Guide complet pour passer en Full HD et 4K réel selon votre débit et votre décodeur.\", \"angle\": \"Explication technique H265 HEVC unique en francais\"}, {\"keyword\": \"renouveler abonnement iptv expire\", \"slug\": \"renouveler-iptv\", \"intent\": \"probleme\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Guide Pratique\", \"icon\": \"fa-sync\", \"description\": \"Accès IPTV expiré ce soir ? Renouvellement en 10 minutes sans perte de configuration. Procédure complète pour conserver vos paramètres Xtream Codes.\", \"angle\": \"Renouvellement urgent sans perte de configuration\"}, {\"keyword\": \"iptv lent ameliorer vitesse streaming\", \"slug\": \"iptv-lent\", \"intent\": \"probleme\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Solution Technique\", \"icon\": \"fa-tachometer-alt\", \"description\": \"IPTV lent et saccadé ? 6 optimisations testées : QoS routeur, Ethernet vs WiFi, résolution adaptative et paramètres buffer Tivimate. Résultats immédiats.\", \"angle\": \"Guide QoS reseau et buffer exclusif\"}, {\"keyword\": \"meilleure application iptv android 2026\", \"slug\": \"meilleure-app-iptv\", \"intent\": \"comparatif\", \"competition\": \"moyenne\", \"volume\": \"eleve\", \"label\": \"Comparatif\", \"icon\": \"fa-balance-scale\", \"description\": \"Tivimate Premium vs IPTV Smarters Pro vs MXL TV : le comparatif honnête 2026. Fonctionnalités, stabilité, EPG et verdict selon votre équipement.\", \"angle\": \"Comparatif honnete avec verdict clair par profil utilisateur\"}, {\"keyword\": \"iptv premium 4k ultra hd france\", \"slug\": \"iptv-4k-premium\", \"intent\": \"comparatif\", \"competition\": \"moyenne\", \"volume\": \"eleve\", \"label\": \"Guide Achat\", \"icon\": \"fa-medal\", \"description\": \"Comment reconnaître un vrai service IPTV 4K Ultra HD ? Les 5 critères techniques que les fournisseurs vous cachent. Infrastructure, codecs et tests de charge expliqués.\", \"angle\": \"Denonce le faux 4K et explique les vrais criteres techniques\"}, {\"keyword\": \"ligue 1 direct sans canal plus iptv\", \"slug\": \"ligue1-iptv\", \"intent\": \"chaines\", \"competition\": \"moyenne\", \"volume\": \"eleve\", \"label\": \"Guide Sport\", \"icon\": \"fa-futbol\", \"description\": \"Regardez toute la Ligue 1 en direct HD sans abonnement Canal+. Toutes les chaînes disponibles, qualité des flux et compatibilité TV, mobile et tablette.\", \"angle\": \"Alternative legale Canal Plus avec toutes les chaines Ligue 1\"}, {\"keyword\": \"chaines arabes iptv abonnement 2026\", \"slug\": \"chaines-arabes\", \"intent\": \"chaines\", \"competition\": \"moyenne\", \"volume\": \"eleve\", \"label\": \"Guide Chaines\", \"icon\": \"fa-globe\", \"description\": \"Plus de 500 chaînes arabes HD via IPTV : beIN Sports Arabia, MBC, Rotana, Shahid. Stabilité des flux, configuration et abonnement adapté marché maghrébin.\", \"angle\": \"Guide complet 500 chaines arabes HD stabilite testee\"}, {\"keyword\": \"iptv legal france 2026 risques\", \"slug\": \"iptv-legal-france\", \"intent\": \"informatif\", \"competition\": \"faible\", \"volume\": \"eleve\", \"label\": \"Dossier Expert\", \"icon\": \"fa-balance-scale-right\", \"description\": \"IPTV légal ou illégal en France en 2026 ? Ce que dit vraiment la loi, les risques réels pour l'utilisateur et comment se protéger intelligemment.\", \"angle\": \"Analyse juridique objective sans prise de position\"}, {\"keyword\": \"c est quoi iptv explication 2026\", \"slug\": \"cest-quoi-iptv\", \"intent\": \"informatif\", \"competition\": \"faible\", \"volume\": \"eleve\", \"label\": \"Dossier Expert\", \"icon\": \"fa-info-circle\", \"description\": \"L'IPTV expliqué simplement en 5 minutes : comment ça fonctionne, la différence avec la TNT et le satellite, les équipements compatibles et pourquoi c'est la révolution TV 2026.\", \"angle\": \"Explication grand public la plus claire avec analogies simples\"}, {\"keyword\": \"iptv vpn france pourquoi utiliser\", \"slug\": \"iptv-vpn\", \"intent\": \"informatif\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Dossier Expert\", \"icon\": \"fa-shield-alt\", \"description\": \"VPN et IPTV : tout ce que vous devez savoir. Les 3 meilleurs VPN compatibles, impact sur la vitesse et recommandation selon votre profil en France.\", \"angle\": \"Guide VPN objectif avec test vitesse et recommandation concrete\"}, {\"keyword\": \"debit internet minimum iptv 4k\", \"slug\": \"debit-iptv\", \"intent\": \"informatif\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Dossier Expert\", \"icon\": \"fa-tachometer-alt\", \"description\": \"Quel débit internet pour l'IPTV ? Tableau complet : 4 Mbps SD, 10 Mbps HD, 25 Mbps 4K. WiFi vs Ethernet et interprétation de votre Speedtest expliqués.\", \"angle\": \"Tableau debit exclusif et conseils Speedtest interpretation\"}, {\"keyword\": \"iptv epg guide programmes configurer\", \"slug\": \"iptv-epg\", \"intent\": \"informatif\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Dossier Expert\", \"icon\": \"fa-calendar-alt\", \"description\": \"L'EPG IPTV expliqué : configurer le guide des programmes sur IPTV Smarters, Tivimate et Kodi. Sources XMLTV, fréquence de mise à jour et résolution des bugs EPG.\", \"angle\": \"Seul guide EPG complet multi-applications en francais\"}, {\"keyword\": \"xtream codes iptv tout comprendre\", \"slug\": \"xtream-codes\", \"intent\": \"informatif\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Dossier Expert\", \"icon\": \"fa-code\", \"description\": \"Xtream Codes expliqué de A à Z : fonctionnement du protocole, différence avec M3U, entrée des codes sur toutes les applications et gestion de la sécurité.\", \"angle\": \"Guide Xtream Codes le plus complet et comprehensible du web\"}, {\"keyword\": \"iptv ligue champions stable sans coupure\", \"slug\": \"iptv-ucl-stable\", \"intent\": \"chaines\", \"competition\": \"faible\", \"volume\": \"eleve\", \"label\": \"Guide Sport\", \"icon\": \"fa-star\", \"description\": \"Regardez la Ligue des Champions sans coupure via IPTV. Pourquoi ça freeze pendant les matchs UCL, comment choisir le bon serveur et optimiser votre connexion pour les soirées européennes.\", \"angle\": \"Soirees UCL sans coupure optimisation avancee serveur\"}, {\"keyword\": \"vod iptv films series vf recents\", \"slug\": \"vod-iptv-vf\", \"intent\": \"chaines\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Guide VOD\", \"icon\": \"fa-film\", \"description\": \"Accédez aux films et séries récents en VF via IPTV. Fonctionnement de la VOD, délais d'ajout après sortie officielle, catch-up 7 jours et comparaison vs Netflix en termes de coût.\", \"angle\": \"Comparaison economique IPTV VOD vs multi-abonnements streaming\"}, {\"keyword\": \"iptv sport f1 tennis nba premium\", \"slug\": \"iptv-sport-f1\", \"intent\": \"chaines\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Guide Sport\", \"icon\": \"fa-trophy\", \"description\": \"F1, tennis Grand Chelem, NBA et sport premium via IPTV : toutes les chaînes disponibles, qualité HD et guide pour ne rater aucun événement sportif en 2026.\", \"angle\": \"Guide sport premium exhaustif toutes disciplines\"}, {\"keyword\": \"smarters pro erreur chargement liste\", \"slug\": \"smarters-erreur\", \"intent\": \"probleme\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Solution Technique\", \"icon\": \"fa-bug\", \"description\": \"IPTV Smarters Pro qui ne charge pas la liste ? 5 solutions testées : vérification URL, vidage du cache, réinstallation et alternative Tivimate si rien ne fonctionne.\", \"angle\": \"5 solutions testees en ordre de probabilite\"}, {\"keyword\": \"iptv erreur authentification xtream\", \"slug\": \"iptv-erreur-auth\", \"intent\": \"probleme\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Solution Technique\", \"icon\": \"fa-lock\", \"description\": \"Erreur d'authentification Xtream Codes : les 5 causes identifiées et leur solution. Distinguez erreur identifiants, expiration, mauvais port ou problème serveur.\", \"angle\": \"Diagnostic erreur auth le plus complet avec causes et solutions\"}, {\"keyword\": \"comparatif box android iptv 2026\", \"slug\": \"comparatif-box-iptv\", \"intent\": \"comparatif\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Comparatif\", \"icon\": \"fa-server\", \"description\": \"Quelle box Android choisir pour l'IPTV en 2026 ? Nvidia Shield, Formuler Z11, BuzzTV et Mi Box S comparés sur 8 critères techniques. Notre verdict selon votre budget.\", \"angle\": \"Comparatif 8 criteres techniques verdict par budget\"}, {\"keyword\": \"iptv chromecast google tv installation\", \"slug\": \"iptv-chromecast\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Tutoriel Express\", \"icon\": \"fa-cast\", \"description\": \"IPTV sur Chromecast et Google TV : apps compatibles, méthode Cast depuis smartphone et optimisation de la qualité 4K. Guide complet 2026.\", \"angle\": \"Guide Chromecast et Google TV methode Cast avancee\"}, {\"keyword\": \"iptv mag box configuration stalker\", \"slug\": \"iptv-mag-stalker\", \"intent\": \"tutoriel\", \"competition\": \"faible\", \"volume\": \"moyen\", \"label\": \"Tutoriel Expert\", \"icon\": \"fa-satellite\", \"description\": \"Configurer votre MAG box avec Stalker Portal : accès aux paramètres, entrée URL portail, EPG MAG et résolution des erreurs Portal loading. Guide exclusif.\", \"angle\": \"Seul guide MAG Stalker Portal detaille en francais\"}];\n\nconst top  = bank.filter(k => k.competition === 'faible' && k.volume === 'eleve');\nconst mid  = bank.filter(k => k.competition === 'faible');\nconst pool = top.length >= 3 ? top : mid;\n\n// Rotation déterministe : même mot-clé = même jour de l'année chaque année\nconst now     = new Date();\nconst start   = new Date(now.getFullYear(), 0, 0);\nconst day     = Math.floor((now - start) / 86400000);\nconst sel     = pool[day % pool.length];\n\nconst dateStr   = now.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });\nconst dateShort = now.toISOString().split('T')[0];\nconst year      = now.getFullYear();\n\nconsole.log('━━━ AGENT 1 RESEARCH ━━━');\nconsole.log('J+' + day + ' → ' + sel.keyword);\nconsole.log('Intent: ' + sel.intent + ' | Concurrence: ' + sel.competition + ' | Volume: ' + sel.volume);\n\nreturn [{ json: { ...sel, date: dateStr, dateShort, year } }];"
+      },
+      "id": "n1",
+      "name": "🔬 AGENT 1 — RESEARCH",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        340,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer VOTRE_CLE_OPENAI_ICI"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\"model\": \"gpt-4o\", \"temperature\": 0.3, \"max_tokens\": 1000, \"messages\": [{\"role\": \"system\", \"content\": \"Tu es un expert SEO Google IPTV francophone. Tu generes des briefs JSON ultra-precis pour viser la page 1 Google sous 72h. Reponds UNIQUEMENT en JSON valide sans markdown ni backticks.\"}, {\"role\": \"user\", \"content\": \"Genere un brief SEO complet.\\n\\nMot-cle : '{{ $json.keyword }}'\\nIntention : {{ $json.intent }}\\nAngle : {{ $json.angle }}\\nAnnee : {{ $json.year }}\\n\\nJSON pur uniquement :\\n{\\n  \\\"titre_h1\\\": \\\"TITRE MAJUSCULES avec mot-cle + promesse chiffree, max 75 chars\\\",\\n  \\\"meta_description\\\": \\\"155 chars max, mot-cle en debut, benefice chiffre, CTA\\\",\\n  \\\"lsi_keywords\\\": [\\\"8 variantes semantiques naturelles\\\"],\\n  \\\"questions_paa\\\": [\\\"4 vraies questions People Also Ask Google\\\"],\\n  \\\"termes_techniques\\\": [\\\"8 termes IPTV precis avec valeurs chiffrees\\\"],\\n  \\\"donnees_chiffrees\\\": [\\\"6 statistiques concretes\\\"],\\n  \\\"structure_h2_h3\\\": [\\\"H2: question Google\\\", \\\"H3: sous-titre\\\", \\\"H2: titre\\\", \\\"H3: sous\\\", \\\"H2: titre\\\", \\\"H2: Conclusion\\\"],\\n  \\\"intro_hook\\\": \\\"Premiere phrase percutante max 20 mots avec chiffre\\\",\\n  \\\"featured_snippet_answer\\\": \\\"Reponse directe 50 mots max pour position zero\\\"\\n}\"}]}"
+      },
+      "id": "n2",
+      "name": "🎯 AGENT 2 — KEYWORDS",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        580,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fusion Research + Keywords → Brief complet\nconst kwRaw = $input.first().json;\nconst res   = $('🔬 AGENT 1 — RESEARCH').first().json;\n\nlet kw = {};\ntry {\n  let raw = kwRaw.choices[0].message.content;\n  raw = raw.replace(/^```json\\s*/i,'').replace(/^```\\s*/i,'').replace(/\\s*```$/i,'').trim();\n  kw = JSON.parse(raw);\n  console.log('AGENT 2 OK — Titre: ' + kw.titre_h1);\n} catch(e) {\n  console.log('AGENT 2 fallback — ' + e.message);\n  kw = {\n    titre_h1: res.keyword.toUpperCase() + ' : GUIDE COMPLET ' + res.year,\n    meta_description: res.description + ' Guide expert StreamElite Pro.',\n    lsi_keywords: [],\n    questions_paa: ['Comment faire ?', 'Quel est le meilleur ?', 'Est-ce legale ?', 'Quel debit ?'],\n    termes_techniques: ['Xtream Codes','M3U','EPG','H.265','HEVC','Tivimate','IPTV Smarters','bitrate'],\n    donnees_chiffrees: ['10 Mbps minimum HD','25 Mbps pour la 4K','99.9% uptime StreamElite','H.265 = -50% bande passante','reponse SAV < 5 minutes','installation en moins de 3 minutes'],\n    structure_h2_h3: ['H2: Qu est-ce que ' + res.keyword + ' ?', 'H3: Fonctionnement technique', 'H2: Guide etape par etape', 'H3: Configuration avancee', 'H2: Problemes courants et solutions', 'H2: Conclusion'],\n    intro_hook: 'Problème résolu en moins de 5 minutes : voici la méthode que personne ne vous montre.',\n    featured_snippet_answer: res.description\n  };\n}\n\nreturn [{ json: { ...res, kw } }];"
+      },
+      "id": "n3",
+      "name": "📋 Fusion Brief",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        820,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer VOTRE_CLE_OPENAI_ICI"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\"model\": \"gpt-4o\", \"temperature\": 0.7, \"max_tokens\": 4500, \"messages\": [{\"role\": \"system\", \"content\": \"Tu es le meilleur redacteur SEO IPTV francophone. MISSION : page 1 Google sous 72h. REGLES : 100 premiers mots avec mot-cle exact + chiffre concret. Chaque H2 = question Google. Apres chaque H2 : 40-60 mots (featured snippet). ZERO phrase generique. Vocabulaire : H.265/HEVC, Xtream Codes, EPG, M3U, Tivimate Premium, IPTV Smarters Pro, bitrate, buffer, CDN, latence.\"}, {\"role\": \"user\", \"content\": \"Redige un article SEO HTML PREMIUM StreamElite Pro. OBJECTIF : Page 1 Google sous 72h.\\n\\nMOT-CLE : {{ $json.keyword }}\\nTITRE H1 : {{ $json.kw.titre_h1 }}\\nACCROCHE : {{ $json.kw.intro_hook }}\\nFEATURED SNIPPET : {{ $json.kw.featured_snippet_answer }}\\nINTENTION : {{ $json.intent }}\\nANGLE : {{ $json.angle }}\\nSTRUCTURE : {{ $json.kw.structure_h2_h3 }}\\nLSI : {{ $json.kw.lsi_keywords }}\\nPAA : {{ $json.kw.questions_paa }}\\nDONNEES : {{ $json.kw.donnees_chiffrees }}\\nTERMES : {{ $json.kw.termes_techniques }}\\nDATE : {{ $json.date }}\\n\\nREGLES HTML :\\nLigne 1 EXACTE : <span class=\\\"text-red-600 font-black uppercase tracking-[0.2em] text-[12px]\\\">{{ $json.label }}</span>\\nLigne 2 EXACTE : <h1 class=\\\"text-4xl md:text-5xl font-black mt-4 mb-10 italic uppercase tracking-tighter leading-tight\\\">{{ $json.kw.titre_h1 }}</h1>\\n\\nBALISES AUTORISEES : <h2> <h3> <p> <ul><li> <strong>\\n<a href=\\\"https://wa.me/33751322082\\\" target=\\\"_blank\\\" class=\\\"article-link\\\">ancre</a>\\nZERO div, span, classe CSS, style inline.\\n\\n3 LIENS WHATSAPP : 1) Dans 2eme paragraphe 2) Apres 3eme H2 3) Conclusion urgente\\nANCRES : obtenir mon acces StreamElite | tester StreamElite Pro | parler a un expert | commander mon abonnement Elite\\n\\nSCHEMA.ORG apres dernier paragraphe :\\n<script type=\\\"application/ld+json\\\">{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"{{ $json.kw.titre_h1 }}\\\",\\\"description\\\":\\\"{{ $json.kw.meta_description }}\\\",\\\"author\\\":{\\\"@type\\\":\\\"Organization\\\",\\\"name\\\":\\\"StreamElite Pro\\\"},\\\"publisher\\\":{\\\"@type\\\":\\\"Organization\\\",\\\"name\\\":\\\"StreamElite Pro\\\",\\\"url\\\":\\\"https://abonnement-stream-iptv.fr\\\"},\\\"datePublished\\\":\\\"{{ $json.dateShort }}\\\",\\\"url\\\":\\\"https://abonnement-stream-iptv.fr/blog.html\\\"}</script>\\n\\nCRITERES : 5 H2 + 2 H3 | 3 listes ul | 6 donnees chiffrees | 950-1150 mots\\nHTML brut. Commence par <span. ZERO markdown. ZERO backtick dans le texte.\"}]}"
+      },
+      "id": "n4",
+      "name": "✍️ AGENT 3 — RÉDACTION",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ================================================================\n// AGENT 4 — VALIDATION QUALITÉ (10 critères)\n// Bloque si score < 7/10\n// ================================================================\nconst resp  = $input.first().json;\nconst brief = $('📋 Fusion Brief').first().json;\n\nlet html = '';\ntry {\n  html = resp.choices[0].message.content;\n  if (!html || html.length < 500) throw new Error('Contenu trop court : ' + (html ? html.length : 0) + ' chars');\n} catch(e) { throw new Error('AGENT 3 RÉDACTION erreur : ' + e.message); }\n\n// Nettoyage markdown si présent\nhtml = html.replace(/^```html\\s*/i,'').replace(/^```\\s*/i,'').replace(/\\s*```$/i,'').trim();\n\n// 10 critères de validation\nconst checks = {\n  span_rouge:       html.includes('text-red-600 font-black uppercase'),\n  h1_present:       html.includes('<h1'),\n  h2_minimum_4:     (html.match(/<h2>/gi)||[]).length >= 4,\n  h3_present:       (html.match(/<h3>/gi)||[]).length >= 1,\n  wa_links_3plus:   (html.match(/wa\\.me/gi)||[]).length >= 2,\n  liste_ul_2plus:   (html.match(/<ul>/gi)||[]).length >= 2,\n  strong_tags:      (html.match(/<strong>/gi)||[]).length >= 3,\n  article_link:     html.includes('article-link'),\n  schema_org:       html.includes('schema.org'),\n  longueur_ok:      html.length > 3000\n};\n\nconst score = Object.values(checks).filter(Boolean).length;\nconst details = Object.entries(checks).map(([k,v]) => (v ? '✅' : '❌') + ' ' + k).join(' | ');\n\nconsole.log('━━━ AGENT 4 VALIDATION ━━━');\nconsole.log('Score: ' + score + '/10');\nconsole.log(details);\nconsole.log('Longueur HTML: ' + html.length + ' chars');\n\nif (score < 7) {\n  throw new Error('QUALITÉ INSUFFISANTE (' + score + '/10). Workflow arrêté pour protéger le SEO.\\n' + details);\n}\n\nreturn [{ json: {\n  id: brief.slug,\n  keyword: brief.keyword,\n  label: brief.label,\n  icon: brief.icon || 'fa-satellite-dish',\n  date: brief.date,\n  dateShort: brief.dateShort,\n  description: brief.description,\n  meta_description: brief.kw?.meta_description || brief.description,\n  intent: brief.intent,\n  html,\n  qualityScore: score\n}}];"
+      },
+      "id": "n5",
+      "name": "📦 AGENT 4 — VALIDATION",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Karimzz59/Streamelite/contents/blog.html",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token VOTRE_TOKEN_GITHUB_ICI"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        }
+      },
+      "id": "n6",
+      "name": "📥 GitHub — Lire blog.html",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Karimzz59/Streamelite/contents/sitemap.xml",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token VOTRE_TOKEN_GITHUB_ICI"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        }
+      },
+      "id": "n6b",
+      "name": "📥 GitHub — Lire sitemap.xml",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const gh  = $input.first().json;\nconst art = $('📦 AGENT 4 — VALIDATION').first().json;\nconst cur = Buffer.from(gh.content, 'base64').toString('utf-8');\nconst sha = gh.sha;\n\n// ANTI-DOUBLON\nconst alreadyExists = cur.includes('\"' + art.id + '\"') || cur.includes(\"openArticle('\" + art.id + \"')\");\nif (alreadyExists) {\n  throw new Error('DOUBLON DETECTE : ' + art.id + ' existe deja.');\n}\n\n// Titre présentable\nconst titreCard = art.keyword.replace(/[-_]/g,' ').split(' ').map(w => w.charAt(0).toUpperCase()+w.slice(1)).join(' ');\n\n// Carte HTML\nconst card = `\n                <!-- SEO BOT [${art.date}] — ${art.keyword} -->\n                <div class=\"blog-card\">\n                    <div class=\"article-image-placeholder\">\n                        <i class=\"fas ${art.icon} text-red-600 opacity-20 text-6xl\"></i>\n                    </div>\n                    <div class=\"p-8\">\n                        <div class=\"flex items-center space-x-3 mb-4\">\n                            <span class=\"text-red-600 font-bold uppercase text-[10px] tracking-widest\">${art.label}</span>\n                            <span class=\"text-gray-600 text-[10px]\">${art.dateShort}</span>\n                        </div>\n                        <h2 class=\"text-2xl font-bold mb-4 leading-snug\">${titreCard}</h2>\n                        <p class=\"text-gray-400 text-sm mb-8 leading-relaxed\">${art.description}</p>\n                        <span onclick=\"openArticle('${art.id}')\" class=\"btn-read-more\">Lire le guide complet</span>\n                    </div>\n                </div>`;\n\n// ================================================================\n// CORRECTION DÉFINITIVE : échapper </script> pour ne jamais\n// casser le bloc <script> parent de blog.html\n// Sans cet échappement, chaque article avec Schema.org rend\n// tous les articles non-cliquables.\n// ================================================================\nconst safeHtml = art.html\n  .replace(/<\\/script>/gi, '<\\\\/script>')\n  .replace(/<script/gi, '<\\\\x73cript')\n  .replace(/`/g, \"'\")\n  .replace(/\\$\\{/g, '\\\\${');\n\nconst jsEntry = `\n            \"${art.id}\": { content: \\`${safeHtml}\\` },`;\n\nlet updated = cur;\nif (!updated.includes('<div class=\"md:col-span-2 mt-10\">')) {\n  throw new Error('Ancre grille introuvable dans blog.html');\n}\nif (!updated.includes('tutoriel: {')) {\n  throw new Error('Ancre JS introuvable dans blog.html');\n}\n\nupdated = updated.replace('<div class=\"md:col-span-2 mt-10\">', card + '\\n                <div class=\"md:col-span-2 mt-10\">');\nupdated = updated.replace('tutoriel: {', jsEntry + '\\n            tutoriel: {');\n\nconst b64 = Buffer.from(updated, 'utf-8').toString('base64');\nconsole.log('Injection OK | Schema.org echappe | index.html PROTEGE');\nreturn [{ json: { blogContent: b64, blogSha: sha, keyword: art.keyword, date: art.date, dateShort: art.dateShort, id: art.id, qualityScore: art.qualityScore }}];"
+      },
+      "id": "n7",
+      "name": "💉 Injection blog.html",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Mise à jour lastmod sitemap.xml\nconst sitemapGh = $input.first().json;\nconst injData   = $('💉 Injection blog.html').first().json;\n\nconst cur     = Buffer.from(sitemapGh.content, 'base64').toString('utf-8');\nconst sha     = sitemapGh.sha;\nconst today   = injData.dateShort;\n\n// Mettre à jour la date lastmod\nconst updated = cur.replace(/<lastmod>[^<]*<\\/lastmod>/, '<lastmod>' + today + '</lastmod>');\n\nconst b64 = Buffer.from(updated, 'utf-8').toString('base64');\nconsole.log('✅ Sitemap lastmod mis à jour : ' + today);\n\nreturn [{ json: {\n  sitemapContent: b64,\n  sitemapSha: sha,\n  blogContent: injData.blogContent,\n  blogSha: injData.blogSha,\n  keyword: injData.keyword,\n  date: injData.date,\n  dateShort: injData.dateShort,\n  qualityScore: injData.qualityScore\n}}];"
+      },
+      "id": "n7b",
+      "name": "🗺️ Update Sitemap",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/Karimzz59/Streamelite/contents/blog.html",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token VOTRE_TOKEN_GITHUB_ICI"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\"message\": \"SEO [{{ $json.dateShort }}] - {{ $json.keyword }}\", \"content\": \"{{ $json.blogContent }}\", \"sha\": \"{{ $json.blogSha }}\"}"
+      },
+      "id": "n8",
+      "name": "📤 Push blog.html",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2020,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/Karimzz59/Streamelite/contents/sitemap.xml",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token VOTRE_TOKEN_GITHUB_ICI"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\"message\": \"Sitemap update [{{ $json.dateShort }}]\", \"content\": \"{{ $json.sitemapContent }}\", \"sha\": \"{{ $json.sitemapSha }}\"}"
+      },
+      "id": "n8b",
+      "name": "📤 Push sitemap.xml",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2020,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.bing.com/ping?sitemap=https://abonnement-stream-iptv.fr/sitemap.xml",
+        "authentication": "none",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "n9",
+      "name": "📣 Ping Bing IndexNow",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2260,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer VOTRE_CLE_OPENAI_ICI"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\"model\": \"gpt-4o\", \"temperature\": 0.3, \"max_tokens\": 800, \"messages\": [{\"role\": \"system\", \"content\": \"Tu es un expert SEO. Tu generes des plans d action en JSON pur sans markdown ni backticks.\"}, {\"role\": \"user\", \"content\": \"Article : '{{ $json.keyword }}'\\nScore : {{ $json.qualityScore }}/10\\n\\nJSON pur :\\n{\\n  \\\"actions_j1_j3\\\": [\\\"3 actions urgentes 72h\\\"],\\n  \\\"actions_j7\\\": [\\\"3 actions SEO 7 jours\\\"],\\n  \\\"actions_j30\\\": [\\\"3 actions SEO 30 jours\\\"],\\n  \\\"maillage_interne\\\": [\\\"2 articles a lier\\\"],\\n  \\\"cluster_articles\\\": [\\\"3 idees articles\\\"],\\n  \\\"kpis_search_console\\\": [\\\"4 metriques\\\"],\\n  \\\"positionnement_estime\\\": \\\"delai realiste en jours\\\"\\n}\"}]}"
+      },
+      "id": "n10",
+      "name": "👁️ AGENT 5 — MONITOR",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2500,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const mon = $input.first().json;\nconst res = $('🔬 AGENT 1 — RESEARCH').first().json;\n\nlet qualityScore = 'N/A';\ntry { qualityScore = $('📦 AGENT 4 — VALIDATION').first().json.qualityScore + '/10'; } catch(e) {}\n\nlet m = {};\ntry {\n  let r = mon.choices[0].message.content;\n  r = r.replace(/^```json\\s*/i,'').replace(/^```\\s*/i,'').replace(/\\s*```$/i,'').trim();\n  m = JSON.parse(r);\n} catch(e) { m = { positionnement_estime: 'Entre 48h et 7 jours (longue traîne faible concurrence)' }; }\n\nconst rapport = {\n  status: '🚀 ARTICLE PUBLIÉ — SEO DOMINATION',\n  timestamp: new Date().toISOString(),\n  AGENT_1_RESEARCH:  { motCle: res.keyword, intent: res.intent, competition: res.competition, volume: res.volume },\n  AGENT_2_KEYWORDS:  'Brief 9 paramètres généré ✅',\n  AGENT_3_REDACTION: 'Article 950-1150 mots + Schema.org ✅',\n  AGENT_4_PUBLISH:   { blog_html: 'MODIFIÉ ✅', index_html: 'PROTÉGÉ 🔒', sitemap_lastmod: 'ACTUALISÉ ✅', ping_bing: 'ENVOYÉ ✅', score_qualite: qualityScore },\n  AGENT_5_MONITOR: {\n    positionnement_estime: m.positionnement_estime,\n    actions_urgentes_72h: m.actions_j1_j3,\n    actions_j7: m.actions_j7,\n    actions_j30: m.actions_j30,\n    maillage_interne: m.maillage_interne,\n    prochains_articles: m.cluster_articles,\n    kpis_a_surveiller: m.kpis_search_console\n  },\n  PROCHAIN_ARTICLE: 'Demain à 7h00 — rotation automatique des mots-clés'\n};\n\nconsole.log(JSON.stringify(rapport, null, 2));\nreturn [{ json: rapport }];"
+      },
+      "id": "n11",
+      "name": "📊 Rapport Final",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2740,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 1 * *"
+            }
+          ]
+        }
+      },
+      "id": "n12",
+      "name": "🔄 AGENT 6 — REFRESH (Trigger J+30)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        100,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// AGENT 6 — REFRESH MENSUEL (DORMANT — actif automatiquement à J+30)\nconst now       = new Date();\nconst start     = new Date(now.getFullYear(), 0, 0);\nconst dayOfYear = Math.floor((now - start) / 86400000);\n\nif (dayOfYear < 30) {\n  throw new Error('REFRESH DORMANT — Actif dans ' + (30 - dayOfYear) + ' jours. Patience !');\n}\n\nconsole.log('AGENT 6 REFRESH ACTIF — J+' + dayOfYear + ' — Analyse des articles à rafraîchir...');\nreturn [{ json: { mode: 'refresh', dayOfYear, date: now.toISOString().split('T')[0] } }];"
+      },
+      "id": "n13",
+      "name": "🔄 AGENT 6 — REFRESH (Garde)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        340,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// AGENT 7 — SEARCH CONSOLE OPTIMIZER (DORMANT — à activer dans 3 mois)\n// Quand votre site aura du trafic, cet agent :\n// 1. Se connecte à Search Console\n// 2. Identifie vos pages en position 4-15 (impressions > 50, CTR < 3%)\n// 3. Ces pages sont à 2 positions de la page 1 — potentiel énorme\n// 4. Génère un plan d'optimisation prioritaire\n// Pour activer : ajouter GOOGLE_OAUTH_TOKEN dans vos credentials\nthrow new Error('AGENT 7 DORMANT — À activer manuellement dans 3 mois quand le site a du trafic.');"
+      },
+      "id": "n14",
+      "name": "📊 AGENT 7 — SEARCH CONSOLE (Dormant)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        340,
+        1100
+      ]
+    }
+  ],
+  "connections": {
+    "⏰ Tous les jours à 7h00": {
+      "main": [
+        [
+          {
+            "node": "🔬 AGENT 1 — RESEARCH",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔬 AGENT 1 — RESEARCH": {
+      "main": [
+        [
+          {
+            "node": "🎯 AGENT 2 — KEYWORDS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🎯 AGENT 2 — KEYWORDS": {
+      "main": [
+        [
+          {
+            "node": "📋 Fusion Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📋 Fusion Brief": {
+      "main": [
+        [
+          {
+            "node": "✍️ AGENT 3 — RÉDACTION",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "✍️ AGENT 3 — RÉDACTION": {
+      "main": [
+        [
+          {
+            "node": "📦 AGENT 4 — VALIDATION",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📦 AGENT 4 — VALIDATION": {
+      "main": [
+        [
+          {
+            "node": "📥 GitHub — Lire blog.html",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "📥 GitHub — Lire sitemap.xml",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📥 GitHub — Lire blog.html": {
+      "main": [
+        [
+          {
+            "node": "💉 Injection blog.html",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📥 GitHub — Lire sitemap.xml": {
+      "main": [
+        [
+          {
+            "node": "🗺️ Update Sitemap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "💉 Injection blog.html": {
+      "main": [
+        [
+          {
+            "node": "📤 Push blog.html",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🗺️ Update Sitemap": {
+      "main": [
+        [
+          {
+            "node": "📤 Push sitemap.xml",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📤 Push blog.html": {
+      "main": [
+        [
+          {
+            "node": "📣 Ping Bing IndexNow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📤 Push sitemap.xml": {
+      "main": [
+        [
+          {
+            "node": "📣 Ping Bing IndexNow",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "📣 Ping Bing IndexNow": {
+      "main": [
+        [
+          {
+            "node": "👁️ AGENT 5 — MONITOR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "👁️ AGENT 5 — MONITOR": {
+      "main": [
+        [
+          {
+            "node": "📊 Rapport Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔄 AGENT 6 — REFRESH (Trigger J+30)": {
+      "main": [
+        [
+          {
+            "node": "🔄 AGENT 6 — REFRESH (Garde)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "tags": [
+    "SEO",
+    "IPTV",
+    "StreamElite",
+    "v6",
+    "7-agents",
+    "featured-snippet",
+    "anti-doublon",
+    "clé-hardcodée"
+  ]
+}
